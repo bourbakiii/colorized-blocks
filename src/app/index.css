@@ -1,0 +1,50 @@
+@import "reset.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: black;
+}
+
+.animate-expanded {
+    width: 0;
+    animation: expand-width ease 1s forwards, expand-transform ease 1s forwards;
+}
+
+.animate-removing {
+    animation: remove-transform ease 1s forwards;
+}
+
+@keyframes remove-transform {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(20vw);
+    }
+}
+
+@keyframes expand-transform {
+    0% {
+        opacity: 0;
+        transform: translateX(-20vw);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes expand-width {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 20vw;
+    }
+}
